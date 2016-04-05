@@ -87,13 +87,52 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.tests.swtjavafx.ScalaExample</mainClass>
+                        </manifest>
+                        <manifestEntries>
+                            <Class-Path>${env.JAVA_HOME}/jre/lib/</Class-Path>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.tests.swtjavafx.ScalaExample</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
             <plugin>
                 <groupId>com.zenjava</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>8.4.0</version>
                 <configuration>
-                    <mainClass>your.package.with.Launcher</mainClass>
+                    <mainClass>com.tests.swtjavafx.ScalaExample</mainClass>
                 </configuration>
             </plugin>
 
@@ -130,6 +169,14 @@
             <groupId>org.eclipse.swt</groupId>
             <artifactId>${swt.native.artifactid}</artifactId>
             <version>4.5.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javafx.embed.swt</groupId>
+            <artifactId>jfxswt</artifactId>
+            <version>0.0.1</version>
+            <scope>system</scope>
+            <systemPath>${env.JAVA_HOME}/jre/lib/jfxswt.jar</systemPath>
         </dependency>
     </dependencies>
 
