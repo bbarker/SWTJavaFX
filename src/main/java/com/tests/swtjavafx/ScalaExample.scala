@@ -1,18 +1,16 @@
+package com.tests.swtjavafx
+
+
 import javafx.embed.swt.FXCanvas
-import javafx.event.ActionEvent
-import javafx.event.EventHandler
-import javafx.scene.Group
-import javafx.scene.Scene
+import javafx.event.{ActionEvent, EventHandler}
+import javafx.scene.{Group, Scene}
 import javafx.scene.control.Button
 import javafx.scene.paint.Color
+
 import org.eclipse.swt.SWT
 import org.eclipse.swt.graphics.Point
 import org.eclipse.swt.layout.RowLayout
-import org.eclipse.swt.widgets.Display
-import org.eclipse.swt.widgets.Event
-import org.eclipse.swt.widgets.Listener
-import org.eclipse.swt.widgets.Shell
-import org.eclipse.swt.widgets.{Button => SwtButton}
+import org.eclipse.swt.widgets.{Display, Event, Listener, Shell, Button => SwtButton}
 
 object ScalaExample {
   def main(args: Array[String]) {

@@ -1,3 +1,5 @@
+package com.tests.swtjavafx;
+
 import javafx.embed.swt.FXCanvas;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
